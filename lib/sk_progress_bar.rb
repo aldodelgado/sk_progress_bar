@@ -17,7 +17,8 @@ module SkProgressBar
 
   # Return Percentage and Message result of cycle
   def self.progress_status(cycle_index, objects_count)
-    percentage = (cycle_index + 1) * division_by_cycle(objects_count)
+    #percentage = (cycle_index + 1) * division_by_cycle(objects_count)
+    percentage = cycle_index / objects_count.to_f * 100.0
     message = percentage == 100 ? 'Done' : 'Almost done'
     { percentage: percentage, message: message }
   end
